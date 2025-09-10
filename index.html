@@ -4,14 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <title>BITACORA ADAPTATIVO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>BITACORA</h1>
-        <p>JOSE CARLOS BELTRAN GAMEZ - 248057</p>
+        <div class="hdr">
+            <p class="izq"></p>
+            <div class="centro">
+                <h1>BITACORA</h1>
+                <p>JOSE CARLOS BELTRAN GAMEZ - 248057</p>
+            </div>
+            <label for="menu"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <input type="checkbox" name="menu" id="menu">
         <nav>
             <a href="#1">Actividad 1</a>
             <a href="#2">DOM</a>
@@ -19,6 +27,7 @@
             <a href="#4">IA WEB</a>
             <a href="#5">Unidades CSS</a>
             <a href="#6">Diagramas</a>
+            <a href="#7">Animation</a>
         </nav>
     </header>
     <div class="contenedor">
@@ -128,6 +137,7 @@
                         pueden monitorizar su comportamiento para sugerir interfaces de usuario visualmente atractivas y
                         fáciles de usar</li>
                 </ul>
+                <a href="ia.html">Ver bitacora con IA <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="contenido" id="5">
@@ -145,7 +155,8 @@
                     bajo ninguna circunstancia, independientemente del contexto o dispositivo de visualización. Un
                     ejemplo es:</p>
                 <ul>
-                    <li>px (píxeles): La unidad más común. Un píxel de CSS se refiere a un punto en la pantalla, aunque
+                    <li><b>px (píxeles):</b> La unidad más común. Un píxel de CSS se refiere a un punto en la pantalla,
+                        aunque
                         no siempre corresponde a un punto físico en pantallas de alta densidad (retina).</li>
                 </ul>
                 <p>Las unidades relativas son aquellas que son flexibles y su valor cambia según el valor de otra unidad
@@ -157,24 +168,29 @@
                 <ul>
                     <li>Relativas a tipografía
                         <ul>
-                            <li>em: El valor es relativo al tamaño de la fuente del elemento padre. </li>
-                            <li>rem (root em): El valor es relativo al tamaño de la fuente del elemento raíz (<html>),
-                                lo que permite un control más consistente del diseño a nivel global.</li>
-                            <li>ch: Relativo al ancho del carácter "0" del elemento actual.</li>
-                            <li>vh (viewport height): El valor es un porcentaje de la altura de la ventana gráfica.</li>
-                            <li>vmin / vmax: Se ajusta al valor mínimo o máximo entre el ancho y la altura de la ventana
+                            <li><b>em:</b> El valor es relativo al tamaño de la fuente del elemento padre. </li>
+                            <li><b>rem (root em):</b> El valor es relativo al tamaño de la fuente del elemento raíz (
+                                <html>),
+                                lo que permite un control más consistente del diseño a nivel global.
+                            </li>
+                            <li><b>ch:</b> Relativo al ancho del carácter "0" del elemento actual.</li>
+                            <li><b>vmin / vmax:</b> Se ajusta al valor mínimo o máximo entre el ancho y la altura de la
+                                ventana
                                 gráfica, respectivamente. </li>
                         </ul>
                     </li>
                     <li>Relativas al contenedor
                         <ul>
-                            <li>% (porcentaje): El valor es un porcentaje de la dimensión del elemento contenedor
+                            <li><b>% (porcentaje):</b> El valor es un porcentaje de la dimensión del elemento contenedor
                                 (padre). </li>
                         </ul>
                     </li>
                     <li>Relativas al viewport
                         <ul>
-                            <li>vw (viewport width): El valor es un porcentaje del ancho de la ventana gráfica.</li>
+                            <li><b>vh (viewport height):</b> El valor es un porcentaje de la altura de la ventana
+                                gráfica.</li>
+                            <li><b>vw (viewport width):</b> El valor es un porcentaje del ancho de la ventana gráfica.
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -189,7 +205,8 @@
                     asi como algunas paginas repetidas y errores de diseño.</p>
             </div>
             <div class="ac">
-                <img src="img/porsche.png" alt="Imagen de un diagrama de la arquitectura web de porsche" class="act">
+                <img src="img/porsche.png" alt="Imagen de un diagrama de la arquitectura web de porsche"
+                    class="act por">
             </div>
         </div>
         <div class="contenido">
@@ -201,6 +218,43 @@
             </div>
             <div class="ac">
                 <img src="img/pokemon.png" alt="Imagen de un diagrama de flujo de pokémon" class="act">
+            </div>
+        </div>
+        <div class="contenido" id="7">
+            <h1>ANIMATION</h1>
+            <div class="inf">
+                <h2>COLOR-ANIMATION</h2>
+                <p>El color animation en CSS se refiere a la capacidad de animar las propiedades relacionadas con el
+                    color, como por ejemplo:</p>
+                <ul class="animList">
+                    <li><b>color (el color del texto)</b></li>
+                    <li><b>background-color (el color de fondo)</b></li>
+                    <li><b>border-color (el color del borde)</b></li>
+                    <li><b>outline-color (el color del contorno)</b></li>
+                    <li><b>fill y stroke (en SVG)</b></li>
+                </ul>
+                <p>En CSS, los colores pueden animarse porque son valores interpolables. Esto significa que el navegador
+                    puede calcular los pasos intermedios entre un color inicial y uno final (por ejemplo, de red a blue)
+                    y mostrarlos de forma progresiva.</p>
+                <h2>DELAY</h2>
+                <p>En CSS, el animation-delay define cuánto tiempo debe esperar el navegador antes de comenzar la
+                    animación.</p>
+                <div class="delay">
+                    <p>Delay de 3 segundos</p>
+                </div>
+                <h2>ANIMATION-TIMING-FUNCTION</h2>
+                <P>El animation-timing-function en CSS define la velocidad con la que progresa una animación a lo largo
+                    del tiempo. <br>En otras palabras, no cambia la duración total de la animación, sino cómo se reparte
+                    la velocidad entre el inicio, el medio y el final. Por ejemplo, la animación de arriba tiene un
+                    timing function con valor "ease-in-out".</P>
+                <h2>ANIMATION-DIRECTION</h2>
+                <p>La propiedad animation-direction en CSS define la dirección en la que se ejecuta una animación en
+                    cada ciclo. <br> Es especialmente útil cuando la animación es infinita o repetitiva, porque controla
+                    si debe reiniciarse siempre desde el mismo punto o alternar hacia atrás y adelante.</p>
+                <h2>ANIMATION-FILL-MODE</h2>
+                <p>La propiedad animation-fill-mode en CSS define qué estilos de la animación se aplican al elemento
+                    antes de que empiece y después de que termine. <br>En otras palabras: controla si el elemento
+                    mantiene los estilos del @keyframes o regresa a sus estilos originales.</p>
             </div>
         </div>
     </div>
