@@ -23,17 +23,19 @@
 
 html{
     font-size: 16px;
+    font-family: Cousine;
 }
-
+h1{font-weight: bold;}
 header{
     width: 100%;
     height: 80%;
+    padding: 0.2%;
     justify-items: center;
     position: sticky;
     top: 0;
     z-index: 1;
     background: #ffffff;
-    box-shadow: 0px 35px 10px 0px #000000;
+    box-shadow: 0px -4px 10px 0px black;
 }
 header nav{
     position: absolute;
@@ -41,11 +43,15 @@ header nav{
     text-align: center;
     background: var(--mainColor);
     padding: 0.5%;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    overflow: hidden;
 }
 header nav a{
+    display: block;
     color: white;
-    margin-left: 5%;
+    margin-left: 0;
     text-decoration: none;
     transition: all 0.4s ease;
     padding: 0.3%;
@@ -65,10 +71,17 @@ header nav a:hover{
     width: 70%;
     text-align: center;
 }
+.centro h1{
+    font-size: 1.3rem;
+}
+.centro p{
+    font-size: 0.8rem;
+}
+
 header .hdr .izq{width: 20%;}
 header label{
-    visibility: hidden;
     width: 20%;
+    visibility: visible;
     text-align: right;
 }
 header label i{
@@ -76,6 +89,9 @@ header label i{
 }
 #menu{
     display: none;
+}
+#menu:checked ~ nav {
+    transform: scaleY(1);
 }
 .contenedor{
     position: relative;
@@ -97,8 +113,9 @@ header label i{
     margin-top: 30px;
 }
 .contenido h1{
-    width: 100%;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    width: auto;
+    text-align: center;
 }
 .contenido .ac{
     width: 100%;
@@ -106,6 +123,7 @@ header label i{
     padding: 20px;
     border: 2px solid var(--mainColor);
     border-radius: 10px;
+    text-align: center;
 }
 .contenido .ac .act{
     width: 100%;
@@ -119,25 +137,23 @@ header label i{
 .contenido .ac .por:hover{
     transform: scale(3);
 }
+.contenido .ac .pok{
+    width: 70%;
+    max-height: 100vh;
+}
 .contenido .inf{
     width: 100%;
     background: var(--mainColor);
-    padding: 20px;
+    padding: 2%;
     border-radius: 10px;
 }
 .contenido .inf p{
     color: white;
-    font-size: 1rem;
-}
-.contenido .inf img{
-    width: 50%;
-    border-radius: 20px;
 }
 b{color: var(--secondaryColor);}
 .contenido .inf ul li{
     color: white;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 1%;
 }
 .contenido .inf a{
     position: relative;
@@ -162,8 +178,14 @@ b{color: var(--secondaryColor);}
 }
 .inf h2{
     color: var(--secondaryColor);
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin-top: 10px;
+}
+
+.contenido .inf p, .contenido .inf ul li, .contenido .inf a{font-size: 0.8rem;}
+.contenido .inf img{
+    width: 100%;
+    border-radius: 20px;
 }
 
 .animList li:nth-child(1) b{
@@ -199,33 +221,44 @@ b{color: var(--secondaryColor);}
 }
 
 
-@media (max-width: 700px) {
+@media (min-width: 1024px) {
     .centro h1{
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
     .centro p{
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
-    header{box-shadow: 0px -4px 10px 0px black;}
+    header{
+    box-shadow: 0px 35px 10px 0px #000000;
+    }
     header label{
-        visibility: visible;
+        visibility: hidden;
+        width: 20%;
+        text-align: right;
     }
-    header nav {
+    header nav{
+        position: absolute;
+        width: 100%;
         text-align: center;
-        overflow: hidden;
-        transition: all 0.3s ease-out;
-        transform: scaleY(0);
-        transform-origin: top;
-    }
-    #menu:checked ~ nav {
-            transform: scaleY(1);
+        background: var(--mainColor);
+        padding: 0.6%;
+        transition: all 0.3s ease;
+        transform: scaleY(1);
     }
     header nav a{
-        display: block;
-        margin-left: 0;
+        display: inline;
+        margin-left: 5%;
     }
-    .contenido h1{font-size: 1.3rem; width: auto;}
-    .contenido .inf p, .contenido .inf ul li, .contenido .inf a{font-size: 0.8rem;}
-    .contenido .inf img{width: 100%;}
-    .inf h2{font-size: 1rem;}
+    .contenido h1{
+        width: 100%;
+        font-size: 2rem;
+    }
+    .contenido .inf p, .contenido .inf ul li, .contenido .inf a{font-size: 1rem;}
+    .contenido .inf ul li{
+        margin-bottom: 20px;
+    }
+    .contenido .inf img{
+        width: 50%;
+    }
+    .inf h2{font-size: 1.4rem;}
 }
