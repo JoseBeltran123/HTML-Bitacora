@@ -219,7 +219,15 @@ b{color: var(--secondaryColor);}
     50%{margin-left: 30%;}
     100%{margin-left: 0;}
 }
-
+footer{
+    width: 100%;
+    padding: 1%;
+    background: var(--mainColor);
+    text-align: center;
+}
+footer p{
+    color: white;
+}
 
 @media (min-width: 1024px) {
     .centro h1{
