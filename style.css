@@ -249,13 +249,12 @@ footer p{
         width: 100%;
         text-align: center;
         background: var(--mainColor);
-        padding: 0.6%;
         transition: all 0.3s ease;
         transform: scaleY(1);
     }
     header nav a{
         display: inline;
-        margin-left: 5%;
+        margin-left: 3%;
     }
     .contenido h1{
         width: 100%;
