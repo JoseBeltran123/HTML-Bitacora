@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora: El Universo del HTML Responsivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        :root {
+            --color-principal: #6b705c; /* Verde oscuro */
+            --color-secundario: #a5a58d; /* Verde claro */
+            --color-acento: #4a6767; /* Verde azulado */
+            --color-fondo: #fefee3; /* Crema */
+            --color-tarjeta: #fff;
+            --fuente-principal: 'Roboto', sans-serif;
+            --fuente-titulo: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: var(--fuente-principal);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-principal);
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fuente-titulo);
+            color: var(--color-principal);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--color-acento);
+            margin-bottom: 0.5em;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header p {
+            font-style: italic;
+            color: var(--color-secundario);
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        header a{
+            position: relative;
+            text-decoration: none;
+            color: var(--color-acento);
+        }
+
+        header a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: var(--color-acento);
+            z-index: 1;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .entrada-bitacora {
+            background: var(--color-tarjeta);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .entrada-bitacora h2 {
+            font-size: 2em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-fondo);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--color-acento);
+        }
+
+        .entrada-bitacora .fecha {
+            font-style: italic;
+            color: var(--color-secundario);
+            display: block;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .entrada-bitacora p {
+            text-align: justify;
+        }
+
+        .entrada-bitacora ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .entrada-bitacora li {
+            background-color: var(--color-fondo);
+            padding: 10px 15px;
+            border-left: 4px solid var(--color-acento);
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .codigo {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            white-space: pre;
+            color: #c7254e;
+        }
+
+        .codigo-html {
+            color: #4a6767;
+        }
+
+        .codigo-css {
+            color: #28a745;
+        }
+
+        .resaltado {
+            font-weight: bold;
+            color: var(--color-acento);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--color-principal);
+            color: var(--color-fondo);
+            margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media Queries para diseño responsivo */
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .entrada-bitacora {
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .entrada-bitacora:nth-child(1),
+            .entrada-bitacora:nth-child(4) {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="contenedor">
+            <h1>Bitácora: El Universo del HTML Responsivo</h1>
+            <p>Un recorrido por los conceptos y técnicas esenciales para crear sitios web que se adapten a cualquier dispositivo.</p>
+            <a href="index.html">Volver al inicio</a>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <article class="entrada-bitacora">
+            <span class="fecha">7 de septiembre de 2025</span>
+            <h2>1. El Cimiento: &lt;meta name="viewport"&gt;</h2>
+            <p>Todo el viaje del diseño responsivo comienza con una simple pero poderosa etiqueta en el <span class="resaltado">&lt;head&gt;</span> de nuestro HTML. Sin ella, los navegadores en dispositivos móviles intentarían renderizar la página como si fuera de escritorio, haciendo que el usuario tenga que hacer zoom para leer el contenido. El <span class="resaltado">viewport</span> es lo que le dice al navegador: "adapta el ancho de la página al ancho del dispositivo".</p>
+            <p>Este es el código mágico que lo hace posible:</p>
+            <pre class="codigo"><span class="codigo-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></pre>
+            <ul>
+                <li><span class="resaltado">width=device-width</span>: Establece el ancho de la página igual al ancho de la pantalla del dispositivo.</li>
+                <li><span class="resaltado">initial-scale=1.0</span>: Define el nivel de zoom inicial al cargar la página. Es crucial para que no haya zoom por defecto.</li>
+            </ul>
+        </article>
+
+        <article class="entrada-bitacora">
+            <span class="fecha">14 de septiembre de 2025</span>
+            <h2>2. Flexbox: Más Allá de las Tablas</h2>
+            <p>Flexbox (Flexible Box Layout) revolucionó la forma de crear diseños complejos y dinámicos. Es un modelo de diseño unidimensional que permite distribuir el espacio y alinear los ítems de un contenedor, incluso cuando sus tamaños son desconocidos o dinámicos.</p>
+            <p>Con solo unas pocas líneas de CSS, podemos crear layouts increíblemente flexibles. Por ejemplo, para crear una barra de navegación que se adapte al tamaño de la pantalla, podemos usar:</p>
+            <pre class="codigo"><span class="codigo-css">.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</span></pre>
+            <p>Las propiedades como <span class="resaltado">flex-grow</span>, <span class="resaltado">flex-shrink</span> y <span class="resaltado">flex-basis</span> nos dan un control total sobre cómo los elementos se expanden o contraen.</p>
+        </article>
+
+        <article class="entrada-bitacora">
+            <span class="fecha">21 de septiembre de 2025</span>
+            <h2>3. CSS Grid: El Mago de las Cuadrículas</h2>
+            <p>Si Flexbox es ideal para diseños unidimensionales (filas o columnas), <span class="resaltado">CSS Grid Layout</span> es el amo de los diseños bidimensionales. Permite crear estructuras complejas con filas y columnas, ideal para el esqueleto principal de un sitio web, como el layout de una galería, un blog o un dashboard.</p>
+            <p>Definir un layout de tres columnas con Grid es asombrosamente sencillo:</p>
+            <pre class="codigo"><span class="codigo-css">.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</span></pre>
+            <ul>
+                <li><span class="resaltado">display: grid</span>: Activa el modelo de cuadrícula.</li>
+                <li><span class="resaltado">grid-template-columns: repeat(3, 1fr)</span>: Crea 3 columnas de igual tamaño, ocupando la fracción disponible (fr).</li>
+                <li><span class="resaltado">gap: 20px</span>: Añade un espacio entre las celdas.</li>
+            </ul>
+        </article>
+
+        <article class="entrada-bitacora">
+            <span class="fecha">28 de septiembre de 2025</span>
+            <h2>4. Media Queries: El cerebro de la adaptación</h2>
+            <p>Las Media Queries son el mecanismo clave para aplicar estilos CSS diferentes dependiendo de las características del dispositivo, como el ancho de la pantalla. Son la base para los diseños que cambian su forma y tamaño al pasar de un móvil a una tablet o a un escritorio.</p>
+            <p>Aquí hay un ejemplo clásico para cambiar el color de fondo y el número de columnas cuando la pantalla mide 768px o más:</p>
+            <pre class="codigo"><span class="codigo-css">/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+  .contenedor {
+    grid-template-columns: 1fr 1fr;
+  }
+}</span></pre>
+            <p>Esto nos permite ofrecer una experiencia de usuario óptima en cada contexto, mostrando la información de la manera más legible y accesible posible.</p>
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 - Bitácora de HTML Responsivo. Hecho con HTML y CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
