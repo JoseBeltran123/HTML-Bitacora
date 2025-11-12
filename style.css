@@ -42,6 +42,7 @@ header nav{
     width: 100%;
     text-align: center;
     background: var(--mainColor);
+    left: 0;
     padding: 0.5%;
     transition: all 0.3s ease;
     transform: scaleY(0);
